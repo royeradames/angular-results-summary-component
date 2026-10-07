@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --canvas: #ecf2ff;
+  --ink: #303b59;
+  --muted: #66708a;
+  --lavender: #f0ecff;
+  --result-gradient: linear-gradient(#6943ff, #2f2ce9);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font: 500 1.125rem/1.4 var(--font-hanken), sans-serif; }
+.page-shell { min-height: 100svh; display: flex; flex-direction: column; }
+main { flex: 1; display: grid; place-items: center; padding: 2rem 1.5rem; }
+.results-card { display: grid; grid-template-columns: 1fr 1fr; width: min(100%, 46rem); background: white; border-radius: 2rem; box-shadow: 0 1.875rem 3.75rem #3d6cec26; }
+.result-panel { display: flex; flex-direction: column; align-items: center; padding: 2.375rem 3.375rem 3rem; border-radius: 2rem; color: white; text-align: center; background: var(--result-gradient); }
+h1, h2, p { margin: 0; }
+h1 { color: var(--lavender); font-size: 1.5rem; line-height: 1.3; font-weight: 700; }
+.overall-score { display: flex; flex-direction: column; justify-content: center; width: 12.5rem; height: 12.5rem; flex-shrink: 0; margin: 2.125rem 0 1.75rem; border-radius: 50%; background: linear-gradient(#4d21c9, #2521c900); }
+.overall-score strong { color: white; font-size: 4.5rem; line-height: 1; font-weight: 800; }
+.overall-score span { color: var(--lavender); margin-top: .625rem; }
+.result-panel h2 { margin-bottom: .875rem; font-size: 2rem; line-height: 1.25; font-weight: 700; }
+.comparison { color: var(--lavender); }
+.summary-panel { padding: 2.375rem 2.5rem 2.875rem; }
+.summary-panel h2 { font-size: 1.5rem; line-height: 1.3; font-weight: 700; }
+.category-results { display: grid; gap: 1rem; margin: 1.75rem 0 2.5rem; }
+.category-result { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; padding: 1rem; border-radius: .75rem; }
+.category-result dt { display: flex; align-items: center; gap: .75rem; }
+.category-result dt img { flex-shrink: 0; }
+.category-result dd { margin: 0; color: var(--ink); white-space: nowrap; }
+.category-result dd strong { font-weight: 700; }
+.category-result dd span { color: var(--muted); }
+.category-result[data-category="reaction"] { color: #b5233a; background: #fff6f6; }
+.category-result[data-category="memory"] { color: #8e5b00; background: #fffbf4; }
+.category-result[data-category="verbal"] { color: #067963; background: #f2fcf9; }
+.category-result[data-category="visual"] { color: #3346b9; background: #f3f4fd; }
+.continue-disclosure summary { display: grid; place-items: center; min-height: 3.5rem; padding: .875rem 1rem; border-radius: 2rem; color: white; background: var(--ink); font-weight: 700; cursor: pointer; list-style: none; touch-action: manipulation; }
+.continue-disclosure summary::-webkit-details-marker { display: none; }
+.continue-disclosure summary:hover, .continue-disclosure[open] summary { background: var(--result-gradient); }
+.continue-disclosure > p { margin-top: 1rem; font-size: 1rem; }
+summary:focus-visible, a:focus-visible { outline: 3px solid #3430d8; outline-offset: 5px; }
+footer { padding: 0 1.5rem 1.25rem; text-align: center; font-size: 1rem; }
+footer p + p { margin-top: .375rem; }
+a { color: #303b59; text-decoration: underline; text-underline-offset: .2em; }
+a:hover { color: #4332d7; }
+@media (max-width: 767px) {
+  body { background: white; }
+  main { padding: 0 0 1.5rem; align-items: start; }
+  .results-card { grid-template-columns: 1fr; max-width: 26rem; border-radius: 0; box-shadow: none; }
+  .result-panel { border-radius: 0 0 2rem 2rem; padding: 1.5rem 3.5rem 2.5rem; }
+  h1 { font-size: 1.125rem; }
+  .overall-score { width: 8.75rem; height: 8.75rem; margin: 1.5rem 0; }
+  .overall-score strong { font-size: 3.5rem; }
+  .overall-score span { font-size: 1rem; margin-top: .5rem; }
+  .result-panel h2 { font-size: 1.5rem; margin-bottom: .5rem; }
+  .comparison { font-size: 1rem; }
+  .summary-panel { padding: 1.5rem 1.875rem 0; }
+  .summary-panel h2 { font-size: 1.125rem; }
+  .category-results { margin: 1.5rem 0; font-size: 1rem; }
+}
