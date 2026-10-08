@@ -5,7 +5,7 @@ const overallScore = Math.round(results.reduce((total, result) => total + result
 
 export default function Home() {
   return (
-    <div className="page-shell">
+    <div>
       <main>
         <article className="results-card" aria-labelledby="result-title" aria-describedby="sample-notice">
           <section className="result-panel">

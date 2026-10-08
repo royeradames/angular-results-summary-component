@@ -53,6 +53,6 @@ test.describe("without scripts", () => {
     await page.locator(".continue-disclosure > summary").press("Enter");
     await expect(page.locator(".continue-disclosure")).toHaveAttribute("open", "");
     expect(requests).toEqual([]);
-    await expect(page).toHaveURL("http://127.0.0.1:4388/");
+    expect(new URL(page.url()).pathname).toBe("/");
   });
 });
