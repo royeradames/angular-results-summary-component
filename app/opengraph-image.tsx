@@ -22,7 +22,7 @@ export default function OpengraphImage() {
             {results.map((result) => (
               <div key={result.category} style={{ display: "flex", justifyContent: "space-between", marginTop: 12 }}>
                 <span>{result.category}</span>
-                <span style={{ fontWeight: 700 }}>{result.score} / 100</span>
+                <span style={{ fontWeight: 700 }}>{`${result.score} / 100`}</span>
               </div>
             ))}
           </div>
