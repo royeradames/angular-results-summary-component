@@ -50,6 +50,19 @@ test("tablet frame: side by side, 686 px wide with 41 px gutters at 768", async 
   expect(Math.abs(result.y - summary.y)).toBeLessThanOrEqual(1);
 });
 
+test("Continue hover uses the result gradient", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1080 });
+  await page.goto("/");
+  await page.locator(".continue-disclosure summary").hover();
+  await expect(page.locator(".continue-disclosure summary")).toHaveCSS("background-image", /linear-gradient/);
+});
+
+test("the older project hostname redirects to results-summary.royeradames.com", async ({ request }) => {
+  const response = await request.get("/any-path", { headers: { host: "angular-results-summary-component.royeradames.com" }, maxRedirects: 0 });
+  expect(response.status()).toBe(308);
+  expect(response.headers().location).toBe("https://results-summary.royeradames.com/any-path");
+});
+
 test("mobile frame follows the 375 px design", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 809 });
   await page.goto("/");
@@ -75,6 +88,10 @@ test("width sweep 320 to 1600 px in 10 px steps: no page scroll, 16 px floor, ro
       return Math.abs(label.top + label.height / 2 - (score.top + score.height / 2)) > 2;
     }).map((row) => row.querySelector("dt")!.textContent));
     if (split.length) failures.push(`${width}: score off the label row ${split.join(", ")}`);
+    const result = await box(page, ".result-panel");
+    const summary = await box(page, ".summary-panel");
+    if (width >= 768 && Math.abs(result.y - summary.y) > 1) failures.push(`${width}: panels not side by side`);
+    if (width < 768 && Math.abs(result.width - width) > 1) failures.push(`${width}: result panel ${result.width} px, not full width`);
   }
   expect(failures).toEqual([]);
 });

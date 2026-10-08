@@ -1,11 +1,12 @@
 import { ImageResponse } from "next/og";
 import results from "./data.json";
 
-export const alt = "Results Summary: an overall score of 76 out of 100 with four category scores";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const overall = Math.round(results.reduce((total, result) => total + result.score, 0) / results.length);
+
+export const alt = `Results Summary: an overall score of ${overall} out of 100 with ${results.length} category scores`;
 
 export default function OpengraphImage() {
   return new ImageResponse(

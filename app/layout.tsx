@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/" },
   openGraph: { type: "website", url: "/", siteName, title, description },
+  twitter: { card: "summary_large_image" },
 };
 
 const websiteJsonLd = { "@context": "https://schema.org", "@type": "WebSite", name: siteName, url: siteUrl };
