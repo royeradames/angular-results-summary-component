@@ -14,4 +14,6 @@ Use Node 24. Run `npm ci`, `npm run dev`. Verification: `npm run lint`, `npm run
 
 Family adaptations: 16px text floor, stronger text contrast, native disclosure with visible focus, and an explicit sample label. The inherited WeatherBound title/weather icon and unrelated mock Login toggle are removed.
 
-The migration candidate is not yet published. Existing project/domain settings remain untouched until source review and build verification.
+Live: https://results-summary.royeradames.com/
+
+The card follows the Figma desktop (1440), tablet (768, side by side with 41 px gutters) and mobile (375) frames, centred in the first viewport. The category and lavender text colours are darker than the design's so they reach 4.5:1. `og:site_name` and WebSite JSON-LD name the site "Results Summary". `tests/design.spec.ts` checks the frames, the site identity and every width from 320 to 1600 px in 10 px steps; `PORT` overrides the test port 4388.
