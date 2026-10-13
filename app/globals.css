@@ -42,7 +42,7 @@ h1 { color: var(--lavender); font-size: 1.5rem; line-height: 1.3; font-weight: 7
 summary:focus-visible, a:focus-visible { outline: 3px solid #3430d8; outline-offset: 5px; }
 footer { padding: 0 1.5rem 1.25rem; text-align: center; font-size: 1rem; }
 footer p + p { margin-top: .375rem; }
-a { color: #303b59; text-decoration: underline; text-underline-offset: .2em; }
+a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
 a:hover { color: #4332d7; }
 @media (max-width: 767px) {
   body { background: white; }
