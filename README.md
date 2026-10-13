@@ -49,7 +49,7 @@ Users should be able to:
 
 ### What I learned
 
-Restoring my old Angular repo exposed a deployment that served a different app, with the title "WeatherBound" and a fake login. I learned to check what a hostname actually serves before trusting a recorded alias. The current page uses the Results Summary title and removes that unrelated login toggle.
+Restoring my old Angular repo showed that the last deployed version carried the wrong branding ("WeatherBound") and a mock login. I learned to check what a hostname actually serves before trusting a recorded alias. The current page uses the Results Summary title and removes that unrelated login toggle.
 
 I kept the repo and its `master` branch while moving the implementation to Next.js and Tailwind CSS. The original Angular version remains in Git history at `0b15e36`. Changing the stack did not mean losing the earlier work.
 
@@ -81,7 +81,7 @@ The Playwright server uses port `4388`; `PORT` overrides it. The tests use Chrom
 
 These are Frontend Mentor sample results. I use local JSON data, with no accounts, tracking, stored results, or connected assessment. Continue opens a native disclosure explaining the end of the sample. Visual is **72** in the supplied JSON and earlier implementation, though the reference image shows 73. The overall score, 76, is the rounded mean of the four scores. The 65% comparison is supplied sample copy, not a calculated ranking or a real user result.
 
-I followed the Figma desktop at 1440 px, tablet at 768 px with side-by-side panels and 41 px gutters, and mobile at 375 px. The card is centred in the first viewport. My adaptations include a 16 px text floor, stronger contrast, visible keyboard focus, and an explicit sample label. I darkened the category and lavender text colours and changed the result gradient's starting colour from `#7755ff` to `#6943ff` to meet the 4.5:1 text contrast target.
+I followed the Figma desktop at 1440 px, tablet at 768 px with side-by-side panels and 41 px gutters, and mobile at 375 px. The card is centred on tablet and desktop; on mobile it starts at the top, as in the design. My adaptations include a 16 px text floor, stronger contrast, visible keyboard focus, and an explicit sample label. I darkened the category and lavender text colours and changed the result gradient's starting colour from `#7755ff` to `#6943ff` to meet the 4.5:1 text contrast target.
 
 The older `angular-results-summary-component.royeradames.com` hostname redirects to the live site above. `og:site_name` and WebSite JSON-LD both use "Results Summary".
 
