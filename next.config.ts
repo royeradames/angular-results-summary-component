@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const config: NextConfig = {
+  experimental: { inlineCss: true },
   reactStrictMode: true,
   // One production name: the older project hostname sends people to results-summary.royeradames.com.
   async redirects() {
