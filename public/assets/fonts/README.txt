@@ -7,7 +7,7 @@ Hanken Grotesk is a variable font with this axis:
   wght
 
 This means all the styles are contained in these files:
-  HankenGrotesk-VariableFont_wght.ttf
+  HankenGrotesk-VariableFont_wght.woff2
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and

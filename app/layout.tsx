@@ -4,7 +4,7 @@ import "./globals.css";
 import { siteName, siteUrl } from "./site";
 
 const hankenGrotesk = localFont({
-  src: "../public/assets/fonts/HankenGrotesk-VariableFont_wght.ttf",
+  src: "../public/assets/fonts/HankenGrotesk-VariableFont_wght.woff2",
   weight: "100 900",
   display: "swap",
   variable: "--font-hanken",
