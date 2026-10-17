@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element -- next/image added client JavaScript here without optimizing anything (SVGs, data URLs or unoptimized files). */
 import results from "./data.json";
 
 const overallScore = Math.round(results.reduce((total, result) => total + result.score, 0) / results.length);
@@ -19,7 +19,7 @@ export default function Home() {
             <dl className="category-results">
               {results.map((result) => (
                 <div className="category-result" data-category={result.category.toLowerCase()} key={result.category}>
-                  <dt><Image src={result.icon.replace("./", "/")} width={20} height={20} alt="" unoptimized />{result.category}</dt>
+                  <dt><img src={result.icon.replace("./", "/")} width={20} height={20} alt="" loading="lazy" decoding="async" />{result.category}</dt>
                   <dd><strong>{result.score}</strong><span> / 100</span></dd>
                 </div>
               ))}
